@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#252f6d">
+  <title>คุณจ่ายเงินให้บุหรี่ไปเท่าไหร่แล้ว?</title>
+  <style>
+    :root{--navy:#252f6d;--teal:#43aa96;--teal2:#5cc1aa;--cream:#fff7e4;--yellow:#ffd66b;--bg:#f3f5fa;--text:#252f6d;--muted:#747995;--line:#e2e5ef;--dark:#191815;--darkcard:#24211e}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent} html{background:var(--bg)} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Thai",Arial,sans-serif;background:var(--bg);color:var(--text)} button,input,textarea{font:inherit} button{cursor:pointer}
+    .app{width:100%;min-height:100dvh;background:#fff}.screen{display:none;min-height:100dvh;padding:24px 20px 40px}.screen.active{display:block}.top{margin-bottom:26px}.brand{font-size:13px;font-weight:900;color:var(--teal);letter-spacing:.02em}.progress{display:flex;gap:6px;margin-top:15px}.progress i{height:5px;flex:1;background:#e7e9f1;border-radius:99px}.progress i.on{background:var(--teal)}
+    h1{margin:26px 0 10px;font-size:30px;line-height:1.24;letter-spacing:-.5px}.lead{margin:0 0 27px;color:var(--muted);font-size:15px;line-height:1.65}.stack{display:grid;gap:11px}.choice{width:100%;border:2px solid var(--line);background:#fff;border-radius:18px;padding:16px;display:flex;gap:14px;align-items:center;text-align:left;color:var(--text)}.choice.selected{border-color:var(--teal);background:#effaf7}.choice .ico{width:48px;height:48px;border-radius:15px;background:#eef0f8;display:grid;place-items:center;font-size:25px}.choice .copy{flex:1}.choice strong{display:block;font-size:16px}.choice small{display:block;margin-top:3px;color:var(--muted)}.radio{width:22px;height:22px;border:2px solid var(--line);border-radius:50%}.choice.selected .radio{border:6px solid var(--teal)}
+    .btn{width:100%;min-height:56px;border:0;border-radius:16px;padding:15px 18px;font-size:17px;font-weight:800}.primary{margin-top:24px;background:var(--navy);color:#fff}.ghost{margin-top:10px;background:transparent;color:var(--muted)}.section{margin:0 0 28px}.section-title{display:flex;gap:9px;align-items:center;margin-bottom:18px;font-size:17px;font-weight:850}.field{margin:0 0 17px}.field label{display:block;margin-bottom:8px;font-size:14px;font-weight:650;line-height:1.45}.input{height:58px;padding:0 15px;border:2px solid var(--line);border-radius:15px;display:flex;align-items:center;background:#fff}.input:focus-within{border-color:var(--teal);box-shadow:0 0 0 4px rgba(67,170,150,.1)}.input input{min-width:0;width:100%;border:0;outline:0;background:transparent;font-size:20px;font-weight:750;color:var(--navy)}.input input::placeholder{color:#b7bac7;font-weight:400}.unit{font-size:13px;color:var(--muted);white-space:nowrap}.error{min-height:20px;margin-top:10px;color:#c44949;font-size:13px;text-align:center}
+    .hero{padding:27px 20px;border-radius:23px;text-align:center;color:#fff;background:linear-gradient(145deg,#252f6d,#3a4a9c)}.hero .label{font-size:14px;opacity:.85}.amount{margin:6px 0;color:var(--yellow);font-size:42px;font-weight:900;line-height:1.15}.amount span{font-size:17px}.breakdown{margin-top:17px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}.row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:13px}.saving{margin-top:16px;padding:20px;border-radius:20px;background:var(--cream)}.saving>small{color:#826721}.saving h2{margin:5px 0 17px;font-size:20px;line-height:1.42}.saving-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.saving-box{padding:14px;border-radius:14px;background:#fff}.saving-box span{display:block;color:var(--muted);font-size:12px}.saving-box strong{display:block;margin-top:4px;font-size:18px}.tiny{margin:20px 0 0;text-align:center;color:#9a9ead;font-size:11px;line-height:1.55}
+    .dark{background:var(--dark);color:#f3efe8}.dark .brand{color:var(--teal2)}.dark .progress i{background:#35322e}.dark .progress i.on{background:var(--teal2)}.value-head{display:flex;gap:10px;align-items:flex-start;margin:22px 0 8px}.value-head b{color:var(--teal2);font-size:24px}.value-head h1{margin:0;color:var(--teal2);font-size:27px}.value-intro{margin:0 0 20px;color:#aaa59d;line-height:1.55;font-size:14px}.value-intro strong{color:#f3efe8}.values{display:grid;gap:10px}.value-card{min-height:88px;display:grid;grid-template-columns:45px 1fr auto;gap:11px;align-items:center;padding:14px;background:var(--darkcard);border:1px solid #393631;border-radius:17px}.value-card .emoji{font-size:25px;text-align:center}.value-copy{min-width:0}.value-copy strong{display:block;color:#f4f0e9;font-size:14px;line-height:1.4}.value-copy small{display:block;margin-top:3px;color:#908b84;font-size:11px}.equiv{text-align:right;color:var(--teal2);font-size:17px;font-weight:900;white-space:nowrap}.final-q{margin-top:30px;padding:25px 18px;text-align:center;border:1px solid #3c3933;border-radius:21px;background:linear-gradient(145deg,#24211e,#292722)}.final-q .bubble{font-size:27px}.final-q h2{margin:10px 0 3px;color:var(--teal2);font-size:24px;line-height:1.35}.final-q p{margin:4px 0 17px;color:#f3efe8;font-size:18px;font-weight:800}.final-q textarea{width:100%;min-height:92px;resize:vertical;border:2px solid #403c36;border-radius:14px;outline:0;padding:14px;background:#191816;color:#f3efe8;font-size:15px;line-height:1.5}.final-q textarea:focus{border-color:var(--teal2)}.final-q textarea::placeholder{color:#77736d}.dream-msg{display:none;margin-top:13px;padding:13px;border-radius:13px;background:#1a302a;color:#8dd7c5;line-height:1.55}.dark .tiny{color:#78746e}.dark .ghost{color:#8f8a83}
+    /* Page 4 uses the same light visual language as the opening screen. */
+    .value-page{background:#fff;color:var(--text)}.value-page .value-head b,.value-page .value-head h1{color:var(--teal)}.value-page .value-intro{color:var(--muted)}.value-page .value-intro strong{color:var(--navy)}.value-page .value-card{background:#f8f9fc;border-color:var(--line)}.value-page .value-copy strong{color:var(--navy)}.value-page .value-copy small{color:var(--muted)}.value-page .equiv{color:var(--teal)}.value-page .final-q{background:#f1faf8;border-color:#d9eee9}.value-page .final-q h2{color:var(--navy)}.value-page .final-q p{color:var(--navy)}.value-page .final-q textarea{background:#fff;color:var(--navy);border-color:var(--line)}.value-page .final-q textarea:focus{border-color:var(--teal)}.value-page .final-q textarea::placeholder{color:#9fa4b5}.value-page .dream-msg{background:#e4f6f1;color:#327668}.value-page .tiny{color:#9a9ead}
+    /* Share summary */
+    .share-page{background:#f4f6fb}.share-title{text-align:center;margin-bottom:18px}.share-title h1{margin:18px 0 5px;font-size:26px}.share-title p{margin:0;color:var(--muted);font-size:14px}.share-card{position:relative;overflow:hidden;aspect-ratio:4/5;padding:26px 22px;border-radius:26px;background:linear-gradient(155deg,#252f6d 0%,#303c83 62%,#2b8177 140%);color:#fff;box-shadow:0 16px 40px rgba(37,47,109,.18);display:flex;flex-direction:column}.share-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-80px;background:rgba(93,196,173,.16)}.share-brand{position:relative;z-index:1;color:#8ee1ce;font-size:12px;font-weight:900}.share-kicker{margin-top:28px;color:#dfe4ff;font-size:13px}.share-money{margin:5px 0 0;color:var(--yellow);font-size:34px;font-weight:900}.share-money small{font-size:15px}.share-divider{height:1px;margin:19px 0;background:rgba(255,255,255,.17)}.share-dream-label{color:#aee9da;font-size:12px;font-weight:800}.share-dream{margin:8px 0 0;font-size:23px;font-weight:850;line-height:1.42;overflow-wrap:anywhere}.share-bottom{margin-top:auto}.share-saving{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:13px;background:rgba(255,255,255,.09);font-size:12px}.share-saving strong{color:#fff}.share-footer{margin-top:15px;color:#b7c1e9;font-size:10px;line-height:1.45}.share-actions{display:grid;gap:10px;margin-top:16px}.secondary{background:#eaf7f4;color:#257a69}.save-status{min-height:18px;margin-top:8px;text-align:center;color:var(--muted);font-size:12px}
+    /* Strong, motivational savings block on the share screen. */
+    .share-bottom{margin-top:auto}.start-now{margin:0 0 9px;color:#aee9da;font-size:12px;font-weight:800;line-height:1.4}.share-saving{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0;background:transparent}.share-save-box{padding:12px;border-radius:13px;background:rgba(255,255,255,.1)}.share-save-box span{display:block;color:#cbd3f3;font-size:10px;line-height:1.35}.share-save-box strong{display:block;margin-top:5px;font-size:20px;line-height:1.1}.share-save-box:first-child strong{color:#9ce8d7}.share-save-box:last-child strong{color:var(--yellow)}.share-footer{margin-top:12px}.capture-callout{margin-top:16px;padding:17px 15px;border:2px dashed #b8dcd4;border-radius:16px;background:#eefaf7;text-align:center;color:#276f62;font-size:14px;font-weight:750;line-height:1.55}.capture-callout b{color:var(--navy)}
+    @media(min-width:650px){body{padding:34px 20px}.app{width:440px;min-height:760px;margin:auto;border-radius:30px;overflow:hidden;box-shadow:0 20px 65px rgba(37,47,109,.14)}.screen{min-height:760px}}
+  </style>
+</head>
+<body>
+<main class="app">
+  <section class="screen active" id="p1">
+    <header class="top"><div class="brand">QUITLINE 1600</div><div class="progress"><i class="on"></i><i></i><i></i><i></i></div></header>
+    <h1>อยากรู้ไหม…<br>คุณจ่ายเงินให้บุหรี่<br>ไปเท่าไหร่แล้ว?</h1>
+    <p class="lead">ลองคำนวณดูง่าย ๆ ใช้เวลาไม่ถึง 1 นาที</p>
+    <div class="stack" id="choices">
+      <button class="choice" data-type="cigarette"><span class="ico">🚬</span><span class="copy"><strong>บุหรี่มวน</strong><small>ฉันสูบบุหรี่มวน</small></span><span class="radio"></span></button>
+      <button class="choice" data-type="vape"><span class="ico">💨</span><span class="copy"><strong>บุหรี่ไฟฟ้า</strong><small>ฉันใช้บุหรี่ไฟฟ้า</small></span><span class="radio"></span></button>
+      <button class="choice" data-type="both"><span class="ico">🚬💨</span><span class="copy"><strong>ใช้ทั้งสองแบบ</strong><small>ทั้งบุหรี่มวนและบุหรี่ไฟฟ้า</small></span><span class="radio"></span></button>
+    </div>
+    <button class="btn primary" id="toForm">ถัดไป</button><div class="error" id="selectError"></div>
+  </section>
+
+  <section class="screen" id="p2">
+    <header class="top"><div class="brand">QUITLINE 1600</div><div class="progress"><i class="on"></i><i class="on"></i><i></i><i></i></div></header>
+    <h1>ลองคำนวณกัน</h1><p class="lead">กรอกข้อมูลคร่าว ๆ ตามการใช้งานของคุณ</p>
+    <div class="section" id="cigFields">
+      <div class="section-title"><span>🚬</span> บุหรี่มวน</div>
+      <div class="field"><label for="packPrice">บุหรี่ 1 ซอง ราคาประมาณเท่าไหร่?</label><div class="input"><input id="packPrice" type="number" min="0" step="1" inputmode="decimal" placeholder="เช่น 80"><span class="unit">บาท</span></div></div>
+      <div class="field"><label for="cigsDay">โดยเฉลี่ยสูบวันละกี่มวน?</label><div class="input"><input id="cigsDay" type="number" min="0" step="1" inputmode="numeric" placeholder="เช่น 10"><span class="unit">มวน / วัน</span></div></div>
+      <div class="field"><label for="cigYears">สูบบุหรี่มวนมาแล้วประมาณกี่ปี?</label><div class="input"><input id="cigYears" type="number" min="0" step="0.5" inputmode="decimal" placeholder="เช่น 10"><span class="unit">ปี</span></div></div>
+    </div>
+    <div class="section" id="vapeFields">
+      <div class="section-title"><span>💨</span> บุหรี่ไฟฟ้า</div>
+      <div class="field"><label for="vapeMonth">โดยเฉลี่ยใช้เงินกับบุหรี่ไฟฟ้าเท่าไหร่?</label><div class="input"><input id="vapeMonth" type="number" min="0" step="1" inputmode="decimal" placeholder="เช่น 1,500"><span class="unit">บาท / เดือน</span></div></div>
+      <div class="field"><label for="vapeYears">ใช้บุหรี่ไฟฟ้ามาแล้วประมาณกี่ปี?</label><div class="input"><input id="vapeYears" type="number" min="0" step="0.5" inputmode="decimal" placeholder="เช่น 2"><span class="unit">ปี</span></div></div>
+    </div>
+    <button class="btn primary" id="calculate">ดูผลการคำนวณ</button><div class="error" id="formError"></div><button class="btn ghost" data-back="1">← ย้อนกลับ</button>
+  </section>
+
+  <section class="screen" id="p3">
+    <header class="top"><div class="brand">QUITLINE 1600</div><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></header>
+    <h1>นี่คือเงินที่คุณ<br>อาจจ่ายไปแล้ว</h1>
+    <div class="hero"><div class="label">รวมประมาณ</div><div class="amount"><b id="totalSpent">0</b> <span>บาท</span></div><div class="breakdown" id="breakdown"></div></div>
+    <div class="saving"><small>แต่ถ้าคุณเริ่มเลิกตั้งแต่วันนี้…</small><h2>เงินก้อนต่อไป<br>กลับมาเป็นของคุณได้ 💛</h2><div class="saving-grid"><div class="saving-box"><span>21 วัน</span><strong id="save21">0 บาท</strong></div><div class="saving-box"><span>1 ปี</span><strong id="saveYear">0 บาท</strong></div></div></div>
+    <p class="tiny">ผลลัพธ์เป็นการคำนวณค่าใช้จ่ายโดยประมาณ<br>บุหรี่มวนคำนวณโดยสมมติ 1 ซอง = 20 มวน</p>
+    <button class="btn primary" id="toValues">เงินก้อนนี้ทำอะไรได้บ้าง? →</button><button class="btn ghost" data-back="2">← แก้ไขข้อมูล</button>
+  </section>
+
+  <section class="screen value-page" id="p4">
+    <header class="top"><div class="brand">QUITLINE 1600</div><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></header>
+    <div class="value-head"><b>→</b><h1>เงินก้อนนี้แลกเป็น...</h1></div>
+    <p class="value-intro">ถ้าเงินประมาณ <strong id="valueTotal">0 บาท</strong> กลับมาเป็นของคุณ</p>
+    <div class="values">
+      <div class="value-card"><span class="emoji">🗾</span><span class="value-copy"><strong>ทริปเที่ยวญี่ปุ่น</strong><small>งบประมาณ ~฿35,000</small></span><span class="equiv" id="vJapan">0 ครั้ง</span></div>
+      <div class="value-card"><span class="emoji">🛵</span><span class="value-copy"><strong>มอเตอร์ไซค์มือสอง</strong><small>ราคา ~฿28,000</small></span><span class="equiv" id="vMoto">0 คัน</span></div>
+      <div class="value-card"><span class="emoji">💻</span><span class="value-copy"><strong>โน้ตบุ๊กทำงาน</strong><small>ราคา ~฿22,000</small></span><span class="equiv" id="vLaptop">0 เครื่อง</span></div>
+      <div class="value-card"><span class="emoji">🎓</span><span class="value-copy"><strong>ค่าเทอมมหาวิทยาลัย 1 เทอม</strong><small>ประมาณ ~฿20,000</small></span><span class="equiv" id="vTuition">0 เทอม</span></div>
+      <div class="value-card"><span class="emoji">📱</span><span class="value-copy"><strong>มือถือรุ่นกลาง</strong><small>ราคา ~฿8,000</small></span><span class="equiv" id="vPhone">0 เครื่อง</span></div>
+      <div class="value-card"><span class="emoji">✈️</span><span class="value-copy"><strong>ตั๋วเครื่องบินในประเทศ</strong><small>ราคา ~฿1,500</small></span><span class="equiv" id="vFlight">0 ครั้ง</span></div>
+    </div>
+    <div class="final-q"><div class="bubble">💭</div><h2>ถ้าเงินก้อนนี้กลับมาเป็นของคุณ</h2><p>คุณอยากเอาไปทำอะไร?</p><textarea id="dream" maxlength="180" placeholder="เช่น เก็บเงินให้ลูก พาครอบครัวเที่ยว ซื้อของให้ตัวเอง..."></textarea><div class="dream-msg" id="dreamMsg"></div></div>
+    <button class="btn primary" id="createCard">สร้างการ์ดของฉัน →</button><div class="error" id="dreamError"></div>
+    <p class="tiny">ตัวอย่างราคาเป็นเพียงค่าประมาณ เพื่อช่วยให้เห็นภาพของมูลค่าเงิน</p><button class="btn ghost" data-back="3">← กลับไปดูผลการคำนวณ</button>
+  </section>
+
+  <section class="screen share-page" id="p5">
+    <header class="top"><div class="brand">QUITLINE 1600</div><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></header>
+    <div class="share-title"><h1>นี่คือเหตุผลของคุณ 💚</h1><p>แคปหน้าจอนี้ หรือบันทึกเป็นรูปภาพเพื่อแชร์ได้เลย</p></div>
+    <article class="share-card" id="shareCard">
+      <div class="share-brand">QUITLINE 1600</div>
+      <div class="share-kicker">ที่ผ่านมา ฉันอาจจ่ายให้บุหรี่ไปประมาณ</div>
+      <div class="share-money"><span id="shareTotal">0</span> <small>บาท</small></div>
+      <div class="share-divider"></div>
+      <div class="share-dream-label">ถ้าเงินก้อนนี้กลับมาเป็นของฉัน ฉันอยาก…</div>
+      <div class="share-dream" id="shareDream">—</div>
+      <div class="share-bottom">
+        <div class="start-now">ถ้าเริ่มเลิกตั้งแต่วันนี้ เงินก้อนต่อไปกลับมาเป็นของเราได้ 💚</div>
+        <div class="share-saving">
+          <div class="share-save-box"><span>เริ่มเลิกวันนี้<br>21 วัน เก็บเพิ่มได้</span><strong id="share21">0 บาท</strong></div>
+          <div class="share-save-box"><span>ถ้าไปต่อจนครบ<br>1 ปี เก็บเงินได้</span><strong id="shareYear">0 บาท</strong></div>
+        </div>
+        <div class="share-footer">ทุกการเริ่มต้น มีความหมาย 💚<br>สายด่วนเลิกบุหรี่ 1600</div>
+      </div>
+    </article>
+    <div class="capture-callout">📸 <b>บันทึกหน้าจอนี้ไว้</b><br>แล้วมาแชร์เหตุผลของคุณให้เพื่อน ๆ ดูกัน</div>
+    <div class="share-actions"><button class="btn secondary" id="restart">↻ เริ่มคำนวณใหม่</button><button class="btn ghost" data-back="4">← แก้ไขคำตอบ</button></div>
+  </section>
+</main>
+
+<script>
+  const $=id=>document.getElementById(id); let type=null,total=0,saving21=0,yearSaving=0;
+  const money=n=>Math.round(n).toLocaleString('th-TH');
+  const n=id=>Number($(id).value)||0;
+  function page(num){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$('p'+num).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+  document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{type=btn.dataset.type;document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');$('selectError').textContent=''}));
+  $('toForm').addEventListener('click',()=>{if(!type){$('selectError').textContent='กรุณาเลือกประเภทที่คุณใช้อยู่';return}$('cigFields').style.display=type==='vape'?'none':'block';$('vapeFields').style.display=type==='cigarette'?'none':'block';page(2)});
+  document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>page(Number(b.dataset.back))));
+  $('calculate').addEventListener('click',()=>{
+    let cigPast=0,cigDaily=0,vapePast=0,vapeDaily=0;$('formError').textContent='';
+    if(type==='cigarette'||type==='both'){const price=n('packPrice'),day=n('cigsDay'),years=n('cigYears');if(price<=0||day<=0||years<=0){$('formError').textContent='กรุณากรอกข้อมูลบุหรี่มวนให้ครบ';return}cigDaily=(price/20)*day;cigPast=cigDaily*365*years}
+    if(type==='vape'||type==='both'){const month=n('vapeMonth'),years=n('vapeYears');if(month<=0||years<=0){$('formError').textContent='กรุณากรอกข้อมูลบุหรี่ไฟฟ้าให้ครบ';return}vapeDaily=(month*12)/365;vapePast=month*12*years}
+    total=cigPast+vapePast;const daily=cigDaily+vapeDaily;saving21=daily*21;yearSaving=daily*365;$('totalSpent').textContent=money(total);$('save21').textContent=money(saving21)+' บาท';$('saveYear').textContent=money(yearSaving)+' บาท';
+    $('breakdown').innerHTML=type==='both'?`<div class="row"><span>🚬 บุหรี่มวน</span><strong>${money(cigPast)} บาท</strong></div><div class="row"><span>💨 บุหรี่ไฟฟ้า</span><strong>${money(vapePast)} บาท</strong></div>`:'คำนวณจากข้อมูลที่คุณกรอก';page(3)
+  });
+  function eq(x){return x<10?x.toLocaleString('th-TH',{minimumFractionDigits:1,maximumFractionDigits:1}):Math.round(x).toLocaleString('th-TH')}
+  $('toValues').addEventListener('click',()=>{$('valueTotal').textContent=money(total)+' บาท';$('vJapan').textContent=eq(total/35000)+' ครั้ง';$('vMoto').textContent=eq(total/28000)+' คัน';$('vLaptop').textContent=eq(total/22000)+' เครื่อง';$('vTuition').textContent=eq(total/20000)+' เทอม';$('vPhone').textContent=eq(total/8000)+' เครื่อง';$('vFlight').textContent=eq(total/1500)+' ครั้ง';page(4)});
+  $('dream').addEventListener('input',()=>{const val=$('dream').value.trim(),box=$('dreamMsg');if(!val){box.style.display='none';return}box.style.display='block';box.textContent='💚 “'+val+'” — เก็บสิ่งนี้ไว้เป็นอีกหนึ่งเหตุผลที่อยากเลิกนะ'});
+  $('createCard').addEventListener('click',()=>{const val=$('dream').value.trim();if(!val){$('dreamError').textContent='ลองเขียนสิ่งที่คุณอยากทำกับเงินก้อนนี้ก่อนนะ';$('dream').focus();return}$('dreamError').textContent='';$('shareTotal').textContent=money(total);$('shareDream').textContent=val;$('share21').textContent=money(saving21)+' บาท';$('shareYear').textContent=money(yearSaving)+' บาท';page(5)});
+  $('restart').addEventListener('click',()=>{
+    type=null;total=0;saving21=0;yearSaving=0;
+    document.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));
+    ['packPrice','cigsDay','cigYears','vapeMonth','vapeYears','dream'].forEach(id=>$(id).value='');
+    $('selectError').textContent='';$('formError').textContent='';$('dreamError').textContent='';$('dreamMsg').textContent='';$('dreamMsg').style.display='none';
+    page(1);
+  });
+</script>
+</body>
+</html>
